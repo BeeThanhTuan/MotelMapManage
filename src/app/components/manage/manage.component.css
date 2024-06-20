@@ -1,0 +1,159 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #f2f5fa;
+}
+.main .sidebar{
+    position: relative;
+    min-width: 230px;
+    width: 230px;
+    height: 100vh;
+    padding-bottom: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 10;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 3px 0 5px -2px rgba(77, 76, 76, 0.5);
+
+}
+.sidebar .title{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-image: url(http://localhost:4200/assets/images/title.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#openI, #closeI{
+    position:absolute;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    right: -5px;
+    font-size: 18px;
+    transform: translateY(-50%);
+    z-index: 100;
+    color: #474646;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px gray;
+    cursor: pointer;
+}
+ #openI{
+    display: none;
+}
+
+.sidebar .control{
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    
+}
+.control ul{
+    width: 100%;
+    height: 100%;
+}
+.control ul li{
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    transition: all 0.5 ease-in-out;
+}
+/* .control ul li:hover{
+    background-color:var(--li-bg-color);
+}
+.control ul li a:hover{
+    color: #fff;
+} */
+
+.control ul li a{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    cursor: pointer;
+    transition: all 0.5 ease-in-out;
+}
+.control ul .dashboard{
+    background-color:var(--li-bg-color);
+}
+.control ul .selected{
+    background-color:var(--li-bg-color);
+}
+.control ul .selected a, .control ul .dashboard a{
+    color: #fff;
+}
+
+.control ul li a i{
+    font-size: 20px;
+    padding-right: 30px;
+}
+.control ul li a p{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .account{
+    width: 100%;
+    height: 60px;
+    border-top:3px solid #e4e2e1;
+    position: absolute;
+    padding: 10px 0px;
+    bottom: 0;
+    cursor: pointer;
+}
+.account:hover{
+    background-color: #acc5fc;
+}
+
+.account button{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+.account button img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.account button p{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #636262;
+}
+.account button i{
+    font-size: 20px;
+    color: #636262;
+
+}
+
+.main .container{
+    width:100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 5px 20px 5px 20px;
+    background-color: #f9f7f6;
+    box-sizing: border-box;
+    border-radius: 10px;
+}

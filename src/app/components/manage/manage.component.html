@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="sidebar">
+        <i id="closeI" class="fa-solid fa-angle-left" (click)="closeSideBar()"></i>
+        <i id="openI" class="fa-solid fa-angle-right" (click)="openSideBar()"></i>
+        <div class="title">
+        </div>
+        <div class="control" >
+            <ul>
+                <li class ="dashboard" (click)="focusLi($event)">                
+                    <a routerLink="/manage/dashboard">
+                        <i class="fa-solid fa-gauge"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                
+                <li (click)="focusLi($event)">
+                    <a routerLink="/manage/motels">
+                        <i class="fa-solid fa-hotel"></i>
+                        <p>Motel</p>
+                    </a>
+                </li>
+                <li (click)="focusLi($event)">
+                    <a routerLink="/manage/motels-pending" style="position: relative;">
+                        <i class="fa-solid fa-hotel"></i>
+                        <i class="fa-solid fa-clock-rotate-left" style="position: absolute; top: 60%; left: 55px; font-size: 13px; transform: translateY(-50%);"></i>
+                        <p>Motel Pending</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="account">
+            <button (click)="signout()">
+                <img src="http://localhost:4200/assets/images/avt.png" alt="">
+                <p>{{username}}</p>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </div>
+        
+    </div>
+    <div class="container">
+            <router-outlet></router-outlet>
+    </div>
+</div>

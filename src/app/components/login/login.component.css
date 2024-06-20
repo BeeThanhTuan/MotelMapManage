@@ -1,0 +1,123 @@
+.main{
+    position: relative;
+    min-width: 900px;
+    width: 100%;
+    height: 100vh;
+    background-image:  linear-gradient(123deg, var(--bg-color) 38% 38%, 40%, #fff 100% 94%)
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    
+}
+.container{
+    width: 850px;
+    height: 470px;
+    background-color: var(--bg-color) ;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 3px 2px 7px 5px rgba(31, 31, 31, 0.493);
+}
+.container .left{
+    width: 500px;
+    height: 100%;
+    border-radius: 10px;
+}
+.left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+.container .right{
+    width: 350px;
+    height: 100%;
+}
+form{
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form .title{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+form .title::after, form .title::before{
+    position: absolute;
+    content: '';
+    width: 33px;
+    height: 35px;
+}
+form .title::before{
+    top:-2px;
+    left: 0;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+}
+form .title::after{
+    top:-2px;
+    right: 0;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+.title h5{
+    letter-spacing: 1px;
+    font-size: 23px;
+    color: #fff;
+    text-transform: uppercase;
+}
+form input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #9c9b9b;
+    background-color: transparent;
+    margin-bottom: 30px;
+    color: #ffffff;
+    padding-left: 5px;
+    font-size: 17px;
+    font-weight: 500;
+}
+form input::placeholder{
+    color: #d1cfcf;
+}
+form input:focus{
+    outline: none;
+    border-bottom: 2px solid #fff
+
+}
+form button{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    color: var(--bg-color);
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: fff;
+    border-radius: 25px;
+}
+form button:hover{
+    background-color: #2e94d8;
+    color: #fff;
+}
+form button:active{
+    transform: scale(1.01);
+}

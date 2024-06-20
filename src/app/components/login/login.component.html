@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="container">
+      <div class="left">
+        <img src="http://localhost:4200/assets/images/bg-motel.jpg" alt="">
+      </div>
+      <div class="right">
+        <form #formStock="ngForm" (ngSubmit)="login()" autocomplete="off">
+          <div class="title">
+            <h5 class="login" >Manage Motel</h5>
+          </div>
+          <input class="mg-20" type="text"
+            name="username"
+            placeholder="user name"
+            autocomplete="off"
+            [(ngModel)] = "credentials.username">
+          <input type="password"
+           name="password"
+           autocomplete="off"
+           placeholder="password"
+            required
+            [(ngModel)] = "credentials.password">
+          <button type="submit" >Login</button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <h2>Motel Pending</h2>
+        </div>
+        <div class="search-area">
+            <input type="text" placeholder="Search..." id="search-text" aria-describedby="search-text"  [(ngModel)]="searchText" autofocus>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <div class="table-container">
+        <div class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên nhà trọ</th>
+                        <th>Địa chỉ</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên chủ trọ</th>
+                        <th>Địa chỉ chủ trọ</th>
+                        <th>Số điện thoại</th>
+                        <th>Người thêm</th>
+                        <th >Ngày thêm</th>
+                        <th>Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let motel of listMotelPending | search: searchText, let i = index">
+                        <td>{{motel.NameMotel}}</td>
+                        <td>{{motel.Address}} ,{{motel.SubDistrict}}</td>
+                        <td>
+                            <div style="width: fit-content;">
+                                <img style="width: 30px; height: 30px; margin-right: 4px;" *ngFor="let image of motel.Image" src="http://localhost:3000/resources/{{image.Image}}" alt="Motel Image">
+                            </div>
+                        </td>
+                        <td>{{motel.Landlord.HostName}}</td>
+                        <td>{{motel.Landlord.Address}}</td>
+                        <td>{{motel.Landlord.NumberPhone}}</td>
+                        <td>{{motel.UserCreate}}</td>
+                        <td >{{motel.DateCreate}}</td>
+                        <td>
+                            <div class="control">
+                                <i class="fa-regular fa-trash-can" style="--clg:#fc9f9f; --cl:rgb(253, 48, 48);" (click)="deleteMotel(motel._id, i)" ></i>
+                                <i class="fa-solid fa-check" style="--clg:#a1f3c0; --cl:green;" (click)="updateMotel(motel._id, i)" ></i>
+                                <i class="fa-solid fa-info" style="--clg:#d1a3f4; --cl: rgb(183, 0, 255);" (click)="openInfoDetail(motel._id, 0)" ></i>
+                            </div>
+                        </td>
+                    </tr>
+                    
+    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <app-infor-detail/>
+</div>

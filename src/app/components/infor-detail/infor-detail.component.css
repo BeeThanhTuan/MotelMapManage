@@ -1,0 +1,360 @@
+.overlay {
+    min-width: 1100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.278);
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.active {
+    display: flex;
+}
+
+.info-detail {
+    position: relative;
+    min-width: 900px;
+    max-width: 900px;
+    min-height: 650px;
+    height: fit-content;
+    max-height: 665px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 10px 30px 20px;
+    border: 1px solid #797979;
+    box-shadow: 0px 0px 7px 1.5px rgb(134, 133, 133);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close i {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close i:hover {
+    background-color: #f7acac;
+    color: red;
+}
+
+.info-area {
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+}
+
+.info-area::-webkit-scrollbar {
+    width: 5px;
+}
+
+.info-area::-webkit-scrollbar-track {
+    background: #f1f0f0;
+}
+
+.info-area::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 4px;
+}
+
+.info-motel {
+    width: 100%;
+    height: 430px;
+    display: block;
+    padding: 0px 5px;
+    border-radius: 13px;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 1.5px rgb(187, 187, 187);
+}
+
+.info-motel .motel {
+    width: 100%;
+    height: 430px;
+    display: flex;
+}
+
+.images {
+    position: relative;
+    left: -5px;
+    width: 45%;
+    height: 100%;
+}
+
+.images .image-main {
+    width: 100%;
+    height: 100%;
+}
+
+.image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-right: 2px solid rgb(184, 184, 184);
+}
+
+.images .other-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.other-image .prev,
+.other-image .next {
+    width: 40px;
+    height: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px #000000);
+    z-index: 10;
+}
+
+.other-image-area {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.other-image-area .image {
+    min-width: 104px;
+    height: 100px;
+    padding: 5px 3px;
+}
+
+.other-image-area .image img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.infors {
+    width: 55%;
+    height: 100%;
+    padding: 10px 5px 10px 20px;
+    overflow: hidden;
+}
+
+.infors h3 {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    height: 30px;
+    color: #3d3d3d;
+    text-decoration: underline;
+}
+
+.info {
+    width: 100%;
+    height: 380px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border-bottom-right-radius: 13px;
+}
+
+.info .address {
+    width: 100%;
+    display: flex;
+}
+
+.address p {
+    width: 93%;
+}
+
+
+
+.info::-webkit-scrollbar {
+    width: 5px;
+}
+
+.info::-webkit-scrollbar-track {
+    background: #f1f0f0;
+}
+
+.info::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 4px;
+}
+
+.info div {
+    width: 100%;
+    min-height: 25px;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+.info div p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    color: #363636;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+.info div p span {
+    font-weight: 500;
+}
+
+.info-other {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-other .info-landlord {
+    padding: 15px 15px 10px;
+    width: 60%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 13px;
+    display: block;
+    box-shadow: 0px 0px 3px 1px rgb(187, 187, 187);
+}
+
+.info-other .date-create {
+    padding: 15px 15px 10px;
+    width: 40%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 13px;
+    box-shadow: 0px 0px 3px 1px rgb(187, 187, 187);
+}
+
+.info-other .date-update {
+    padding: 15px 15px 10px;
+    width: 40%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 13px;
+    box-shadow: 0px 0px 3px 1px rgb(187, 187, 187);
+}
+
+.info-landlord h3,
+.date-create h3,
+.date-update h3 {
+    font-size: 20px;
+    height: 30px;
+    color: #3d3d3d;
+    text-decoration: underline;
+}
+
+.info-landlord div,
+.date-create div,
+.date-update div {
+    width: 100%;
+    height: auto;
+}
+
+.info-landlord div p,
+.date-create div p,
+.date-update div p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    min-height: 25px;
+    margin-bottom: 2px;
+    color: #3f3f3f;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+.info-landlord div p span,
+.date-create div p span,
+.date-update div p span {
+    font-weight: 500;
+}
+
+.address .view-on-map {
+    position: relative;
+    width: 7%;
+}
+
+.view-on-map i {
+    font-size: 25px;
+    color: rgb(249, 92, 102);
+    cursor: pointer;
+}
+
+.view-on-map i:hover {
+    color: #183153;
+}
+.viewMap{
+    position: relative;
+    visibility: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(113, 113, 113);
+}
+
+.viewMap .remove-icon{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    min-height: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #183153;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.remove-icon i{
+    font-size: 13px;
+    color: #ffffff;
+}
+.viewMap .remove-icon:hover {
+    background-color: red;
+}
+.remove-icon i:hover {
+    color: #fff;
+}
+.viewMap .map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    border-radius: 5px;
+}

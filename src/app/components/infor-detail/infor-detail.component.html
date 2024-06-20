@@ -1,0 +1,130 @@
+<div class="overlay" (click)="removeInfoDetail($event)">
+    <div class="info-detail" (click)="stopPropagation($event)">
+        <div class="close">
+            <i class="fa-solid fa-xmark" (click)="removeInfoDetail($event)"></i>
+        </div>
+        <div *ngIf="id" class="info-area">
+            <div class="info-motel">
+                <div class="motel">
+                    <div class="images">
+                        <div class="image-main">
+                            <img src="http://localhost:3000/resources/{{listImage[0]}}" alt="">
+                        </div>
+                        <div class="other-image">
+                            <div class="prev">
+                                <i *ngIf="listImage.length >4" class="fa-solid fa-angle-left" (click)="prevImage()"></i>
+                            </div>
+                            <div class="other-image-area">
+                                <div class="image"  *ngFor="let image of listImage.slice(1)">
+                                    <img src="http://localhost:3000/resources/{{ image }}" alt="">
+                                </div>
+                            </div>
+                            <div class="next">
+                                <i *ngIf="listImage.length >4" class="fa-solid fa-angle-right" (click)="nextImage()"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infors">
+                        <h3>Thông tin nhà trọ:</h3>
+                        <div class="info" >
+                            <div *ngIf="motel.NameMotel!=='' " class="name-motel">
+                                <p>Tên nhà trọ: <span>{{motel.NameMotel}}</span></p>
+                            </div>
+                            <div class="address" style="position: relative;">
+                                <p >Địa chỉ: <span>{{motel.Address  }}, {{motel.SubDistrict }}, Quy Nhơn</span></p>
+                                <div *ngIf="motel.LatLng" class="view-on-map" (click)="openViewMap()" >
+                                    <i class="fa-solid fa-map-location-dot" title="Hiển thị trên bản đồ"></i>
+                                </div>
+                            </div>
+                            <div class="viewMap" style="width: 410px; min-height: 0px;" >
+                                <div class="remove-icon">
+                                    <i class="fa-solid fa-xmark" (click)="removeViewMap()"></i>
+                                </div>
+                                <div class="map" id="mapView"></div>
+                            </div>
+                            <div class="desc">
+                                <p>Mô tả: <span>{{motel.Description}}</span></p>
+                            </div>
+                            <div class="convenient">
+                                <p>Tiện nghi: <span>{{motel.Convenient }}</span></p>
+                            </div>
+                            <div class="acreage">
+                                <p>Diện tích: <span>{{motel.Acreage }}m²</span></p>
+                            </div>
+                            <div class="distance">
+                                <p>Khoảng cách tới trường: <span>{{motel.Distance }}km</span></p>
+                            </div>
+                            <div class="price">
+                                <p>Giá nhà trọ: <span>{{motel.Price ? motel.Price.toLocaleString("vi-VN") : ''}}đ</span></p>
+                            </div>
+                            <div class="price">
+                                <p>Giá tiền điện: <span> {{motel.PriceElectric ? motel.PriceElectric.toLocaleString("vi-VN"): ''}}đ/kwh</span></p>
+                            </div>
+                            <div class="price">
+                                <p>Giá tiền nước: <span>{{motel.PriceWater ? motel.PriceWater.toLocaleString("vi-VN") : ''}}đ/m³</span></p>
+                            </div>
+                            <div class="price">
+                                <p *ngIf="motel.PriceWifi !==0">Giá wifi: <span>{{motel.PriceWifi ? motel.PriceWifi.toLocaleString("vi-VN") : ''}}đ</span></p>
+                                <p *ngIf="motel.PriceWifi ===0">Giá wifi: <span>0đ</span></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isAccept == 0 "class="info-other">
+                <div class="info-landlord">
+                    <h3>Thông tin liên lạc:</h3>
+                    <div class="landlord">
+                        <p>Tên chủ trọ: <span>{{motel.Landlord.HostName}}</span></p>
+                        <p>Số điện thoại: <span>{{motel.Landlord.NumberPhone }}</span></p>
+                        <p>Địa chỉ liên hệ: <span>{{motel.Landlord.Address ? motel.Landlord.Address : ''}}</span></p>
+
+                    </div>
+                </div>
+                <div class="date-create">
+                    <h3>Thông tin tạo:</h3>
+                    <div class="date">
+                        <p>Người tạo: <span>{{motel.UserCreate }}</span></p>
+                        <p>Thời gian tạo: <span>{{motel.DateCreate }}</span></p>
+                    </div>
+                </div>
+                <div *ngIf="motel.DateUpdate" class="date-update">
+                    <h3>Thông tin cập nhât:</h3>
+                    <div class="date">
+                        <p>Người cập nhật: <span>{{motel.UserUpdate }}</span></p>
+                        <p>Thời gian cập nhật: <span>{{motel.DateUpdate ? motel.DateUpdate : '' }}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isAccept == 1" class="info-other">
+                <div class="info-landlord">
+                    <h3>Thông tin liên lạc:</h3>
+                    <div class="landlord">
+                        <p>Tên chủ trọ: <span>{{motel.Landlord.HostName}}</span></p>
+                        <p>Số điện thoại: <span>{{motel.Landlord.NumberPhone }}</span></p>
+                        <p>Địa chỉ liên hệ: <span>{{motel.Landlord.Address ? motel.Landlord.Address : ''}}</span></p>
+
+                    </div>
+                </div>
+                <div class="date-create">
+                    <h3>Thông tin tạo:</h3>
+                    <div class="date">
+                        <p>Người tạo: <span>{{motel.UserCreate }}</span></p>
+                        <p>Thời gian tạo: <span>{{motel.DateCreate }}</span></p>
+                    </div>
+                </div>
+                <div *ngIf="motel.DateUpdate" class="date-update">
+                    <h3>Thông tin cập nhât:</h3>
+                    <div class="date">
+                        <p>Người cập nhật: <span>{{motel.UserUpdate }}</span></p>
+                        <p>Thời gian cập nhật: <span>{{motel.DateUpdate ? motel.DateUpdate : '' }}</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

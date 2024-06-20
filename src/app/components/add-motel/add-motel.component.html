@@ -1,0 +1,98 @@
+<div class="overlay-A" (click)="removeInfoDetail($event)">
+    <div class="add-form-area" (click)="stopPropagation($event)">
+        <div class="close">
+            <i class="fa-solid fa-xmark" (click)="removeInfoDetail($event)"></i>
+        </div>
+        <div class="add-form">
+           <form #updateMotelForm="ngForm" enctype="multipart/form-data" class="info">
+                <div class="info-main">
+                    <h4>Thông tin nhà trọ:</h4>
+                    <div class="name-motel">
+                        <label>Tên nhà trọ:</label>
+                        <input spellcheck="false" type="text"  name="nameMotel" [(ngModel)]="formData.nameMotel">
+                    </div>
+                    <div class="address">
+                        <label>Đia chỉ:</label>
+                        <textarea spellcheck="false" name="address" [(ngModel)]="formData.address" (blur)="getLocationOnChange()" required></textarea>
+                    </div>
+                    <div class="sub-district">
+                        <label>Phường/xã:</label>
+                        <select [(ngModel)]="formData.subDistrict" name="subDistrict" (ngModelChange)="getLocationOnChange()" ngModel #subDistrict= "ngModel" required>      
+                            <option *ngFor="let subDistrict of listSubDistrict" [value]="subDistrict" >{{subDistrict}}</option>
+                        </select>
+                    </div>
+                    <div class="description">
+                        <label >Mô tả:</label>
+                        <textarea style="max-height: 65px; min-height: 65px;" spellcheck="false"  name="description" [(ngModel)]="formData.description"></textarea>
+                    </div>
+                    <div class="convenient" >
+                        <label>Tiện nghi:</label>
+                        <textarea style="max-height: 65px; min-height: 65px;"  spellcheck="false"  name="convenient" [(ngModel)]="formData.convenient"></textarea>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 5px; margin: 0;">
+                        <div class="acreage">
+                            <label>Diện tích:</label>
+                            <input spellcheck="false" type="number" name="acreage" [(ngModel)]="formData.acreage" >
+                        </div>
+                        <div class="amount">
+                            <label>Số lượng phòng:</label>
+                            <input spellcheck="false" type="number" name="amount" [(ngModel)]="formData.amount">
+                        </div>
+                        <div class="price-motel">
+                            <label>Giá nhà trọ:</label>
+                            <input spellcheck="false" type="text" name="price" [(ngModel)]="formData.price" (input)="formatPrice('price')" (blur)="formatPrice('price')">
+                        </div>                     
+                        <div class="price-electric">
+                            <label>Giá điện:</label>
+                            <input spellcheck="false" type="text" name="electric" [(ngModel)]="formData.electric" (input)="formatPrice('electric')" (blur)="formatPrice('electric')">
+                        </div>
+                        <div class="price-water">
+                            <label>Giá nước:</label>
+                            <input spellcheck="false" type="text" name="water" [(ngModel)]="formData.water"(input)="formatPrice('water')" (blur)="formatPrice('water')">
+                        </div>
+                        <div class="price-wifi">
+                            <label>Giá wifi:</label>
+                            <input spellcheck="false" type="text" name="wifi" [(ngModel)]="formData.wifi" (input)="formatPrice('water')" (blur)="formatPrice('water')">
+                        </div>
+                    </div>
+                </div>
+                <div class="other-info">
+                    <div id="map2" class="map2" style="width:100%; height: 230px; margin-top: 15px; border: 1px solid gray; border-radius: 3px;"></div>
+                    <div class="landlord" style="margin-top: 20px;">
+                        <h4>Thông tin chủ trọ:</h4>
+                        <div class="name-landlord">
+                            <label>Tên chủ trọ:</label>
+                            <input spellcheck="false" type="text" name="hostName" [(ngModel)]="formData.hostName">
+                        </div>
+                        <div class="address-landlord">
+                            <label>Địa chỉ:</label>
+                            <input spellcheck="false" type="text" name="addressHostName" [(ngModel)]="formData.addressHostName">
+                        </div>
+                        <div class="number-phone">
+                            <label>Số điện thoại:</label>
+                            <input spellcheck="false" type="text" name="numberPhone" [(ngModel)]="formData.numberPhone">
+                        </div>
+                    </div>
+                    <div class="img-area" style="margin-top: 20px;">
+                        <h4>Ảnh nhà trọ:</h4>
+                        <div class="image-upload" style="height: 40px;">
+                            <input type="file" name="images" (change)="onFileSelectedImages($event)" multiple required>
+                            <p>
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span *ngIf="selectedFileImages.length===0">Tải ảnh lên</span>
+                                <span *ngIf="selectedFileImages.length!==0">Ảnh đã tải lên: {{selectedFileImages.length}}</span>
+
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="add-button" >
+                        <button (click)="addMotel()">Add</button>
+                    </div>
+                </div>
+           </form>
+            
+        </div>
+    </div>
+</div>
+

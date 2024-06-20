@@ -1,0 +1,176 @@
+.overlay-A {
+    min-width: 1100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.278);
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.active {
+    display: flex;
+}
+
+.add-form-area{
+    position: relative;
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 670px;
+    height: fit-content;
+    max-height: 670px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 10px 20px 20px;
+    border: 1px solid #797979;
+    box-shadow: 0px 0px 7px 1.5px rgb(134, 133, 133);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close i {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close i:hover {
+    background-color: #f7acac;
+    color: red;
+}
+
+.add-form {
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    display: block;
+}
+.add-form .title{
+    width: 100%;
+    height: 40px;
+}
+
+.add-form .info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.info-main, .other-info{
+    position: relative;
+    width:50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+}
+h4{
+    width: 100%;
+    height: 25px;
+    font-size: 21px;
+    margin-bottom: 5px;
+    color: #1d1d1d;
+    letter-spacing: 1px;
+}
+.info-main div, .other-info div div{
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 3px 0px;
+}
+
+label {
+    width: 100%;
+    height: 25px;
+    font-size: 17px;
+    color: #252525;
+    letter-spacing: 1px;
+}
+input, select{
+    width: 100%;
+    height: 30px;
+    padding:  0px 10px;
+    font-size: 17px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 3px;
+    color: #2e2e2e;
+    letter-spacing: 1px;
+}
+textarea{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 52px;
+    min-height: 52px;
+    padding:  5px 10px;
+    font-size: 17px;
+    border-radius: 3px;
+    color: #2e2e2e;
+    letter-spacing: 1px;
+    border: 1px solid rgb(170, 170, 170);
+}
+input:focus, select:focus, textarea:focus{
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+}
+
+.image-upload{
+    width: 100%;
+    height: 40px;
+    border: 2px dashed rgb(248, 208, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(80, 68, 57) ;
+}
+.image-upload p{
+    letter-spacing: 1px;
+}
+.image-upload  i{
+    margin-right: 5px;
+}
+.image-upload input{
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+}
+.add-button{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.add-button button{
+    width: 95%;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: rgb(52, 156, 253);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.add-button button:hover{
+    transform: scaleY(1.05);
+    background-color: rgb(38, 112, 250);
+}
+
